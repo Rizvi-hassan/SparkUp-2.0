@@ -9,9 +9,9 @@ export default function App() {
   return (
     <div className="main">
       <motion.section>
-        <motion.div className="max-w-4xl mx-auto px-4 py-20">
+        <motion.div className="w-max mx-auto px-4 py-20">
           <motion.h1
-            className="text-9xl font-bold text-center"
+            className="lg:text-9xl sm:text-9xl font-bold text-center"
             variants={titleVariant}
             initial="hidden"
             whileInView="visible"
@@ -22,7 +22,7 @@ export default function App() {
           </motion.h1>
 
           <motion.h1
-            className="text-9xl font-bold text-center mt-12"
+            className="lg:text-9xl sm:text-9xl font-bold text-center mt-12"
             variants={titleVariant}
             initial="hidden"
             whileInView="visible"
@@ -33,7 +33,7 @@ export default function App() {
           </motion.h1>
 
           <motion.p
-            className="text-center mt-4 text-2xl"
+            className="text-center mt-4 sm:text-lg lg:text-2xl"
             initial={{ y: 180, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.4 }}

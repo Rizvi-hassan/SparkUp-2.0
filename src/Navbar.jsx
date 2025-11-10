@@ -64,7 +64,7 @@ const SlideTabs = () => {
             opacity: 1,
           }));
         }}
-        className="relative flex w-300 h-15 p-1 shadow-lg backdrop-blur-md"
+        className="relative flex lg:w-300 sm:h-15 lg:h-15 p-1 shadow-lg backdrop-blur-md"
         style={{
           borderWidth: "0px",
           borderRadius: "10px",
