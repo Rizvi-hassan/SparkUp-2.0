@@ -10,7 +10,7 @@ export default function Navbar () {
   useEffect(() => {
     const handleScroll = () => {
       const shouldShow = window.scrollY > 50;
-      setShowBottomNavbar(shouldShow);
+      // setShowBottomNavbar(shouldShow);
     };
 
     if (isDesktop) {

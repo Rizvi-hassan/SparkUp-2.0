@@ -8,7 +8,17 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
-
+@media screen and (max-width: 1000px) {
+  h1{
+  font-weight: 700;
+  font-size: 3.5rem;
+  padding: 0;
+  margin: 0;
+}
+p{
+  font-size: 1.5rem;
+}
+}
 
 
 
