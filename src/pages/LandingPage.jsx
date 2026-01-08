@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import Navbar from '../components/Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,7 +136,7 @@ const LandingPage = () => {
 
     return (
         <>
-            <div className='relative'>
+            <div className='relative font-cormorant'>
 
                 {/* Fixed canvas in bg  */}
                 <canvas
@@ -144,11 +145,13 @@ const LandingPage = () => {
                     style={{ height: '100lvh', width: '100lvw'}}
                 />
 
+
                 {/* Scrollable Content area */}
                 <div style={{ position: "relative", zIndex: 2 }}>
+                    <Navbar/>
                     <div className='w-full h-fit'>
                         {/* Random content  */}
-                        {Array.from({ length: 20 }).map((_, i) => (
+                        {/* {Array.from({ length: 20 }).map((_, i) => (
                             <div
                                 key={i}
                                 className={`flex ${i % 2 === 0 ? 'justify-start' : 'justify-end'} px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[20vh] py-8 md:py-12 lg:py-16`}
@@ -157,7 +160,7 @@ const LandingPage = () => {
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure reiciendis laborum illo placeat magni quidem illum recusandae dolor culpa praesentium, voluptate, minima quam, ab nulla explicabo. Itaque dicta sint molestiae.
                                 </p>
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
 
