@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <Router>
-        <Routes>
+        <Routes> 
           <Route path='/' element={<LandingPage />}/>
         </Routes>
       </Router>
