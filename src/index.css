@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
 @import "tailwindcss";
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -8,6 +11,11 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
+
+@theme {
+  --font-cormorant: "Cormorant Garamond", serif;
+}
+
 @media screen and (max-width: 1000px) {
   h1{
   font-weight: 700;
