@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Navbar from '../components/Navbar';
+import Navbar2 from '../components/Navbar2';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +11,7 @@ const TOTAL_FRAMES = 192;
 const LandingPage = () => {
     const canvasRef = useRef(null);
     const [images, setImages] = useState([])
+    const containerRef = useRef(null)
 
     useEffect(() => {
         const frameImages = [];
@@ -131,12 +133,12 @@ const LandingPage = () => {
             window.removeEventListener('resize', handleResize);
             scrollTrigger.kill();
         };
-    }, [images])
+    }, [images, window.screen])
 
 
     return (
         <>
-            <div className='relative font-cormorant'>
+            <div className='relative font-eb'>
 
                 {/* Fixed canvas in bg  */}
                 <canvas
@@ -147,11 +149,12 @@ const LandingPage = () => {
 
 
                 {/* Scrollable Content area */}
-                <div style={{ position: "relative", zIndex: 2 }}>
-                    <Navbar/>
+                <div ref={containerRef} style={{ position: "relative", zIndex: 2 }}>
+                    {/* <Navbar/> */}
+                    <Navbar2 containerRef={containerRef}/>
                     <div className='w-full h-fit'>
                         {/* Random content  */}
-                        {/* {Array.from({ length: 20 }).map((_, i) => (
+                        {Array.from({ length: 20 }).map((_, i) => (
                             <div
                                 key={i}
                                 className={`flex ${i % 2 === 0 ? 'justify-start' : 'justify-end'} px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[20vh] py-8 md:py-12 lg:py-16`}
@@ -160,7 +163,7 @@ const LandingPage = () => {
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure reiciendis laborum illo placeat magni quidem illum recusandae dolor culpa praesentium, voluptate, minima quam, ab nulla explicabo. Itaque dicta sint molestiae.
                                 </p>
                             </div>
-                        ))} */}
+                        ))}
                     </div>
                 </div>
 
