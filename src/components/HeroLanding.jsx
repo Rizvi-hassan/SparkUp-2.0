@@ -32,7 +32,6 @@ const HeroLanding = () => {
                 trigger: '.hero',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: 1,
                 pin: true,
                 scrub: true,
             }
@@ -62,7 +61,7 @@ const HeroLanding = () => {
                     className='h-lvh w-full relative object-cover bottom-0'
                 />
                 {/* Comment this line to remove noisy effect from background video  <----------------  */}
-                <div className='noisy h-lvh'></div>   
+                {/* <div className='noisy h-lvh'></div>    */}
                 </div>
                 
 

@@ -30,6 +30,28 @@
 
 }
 
+/* Standard properties for Firefox */
+.scroll-container {
+  scrollbar-width: 10px;
+  scrollbar-color: red;
+  /* thumb track */
+}
+
+/* WebKit-specific styles for Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  background-color: black;
+  width: 8px;
+  /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  width: 8px;
+  /* color of the scroll thumb */
+  border-radius: 4px;
+  /* roundness of the scroll thumb */
+}
+
 
 
 /* @media (prefers-color-scheme: light) {

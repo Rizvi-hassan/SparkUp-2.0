@@ -62,8 +62,8 @@ const Navbar2 = ({ containerRef }) => {
     }, "<")
 
     tl.current.to(navBoxRef.current, {
-      width: '185px',
-      height: '255px',
+      width: '200px',
+      height: '300px',
       duration: 0.5,
       ease: 'power3.in'
     })
@@ -99,8 +99,11 @@ const Navbar2 = ({ containerRef }) => {
             </div>
 
             {/* Links  */}
-            <div className='flex flex-col gap-1 text-black pl-4 mt-4'>
-              <a href="#" className='group/links hover-active transition-200 overflow-hidden'>Home
+            <div className='flex flex-col gap-1 text-black pl-6 mt-4'>
+              <a href="#hero" className='group/links hover-active transition-200 overflow-hidden'>Home
+                <span className=' w-[50px] block bg-black border border-black -translate-x-[110%] transition-200 link-underline group-hover/links:translate-x-0 '></span>
+              </a>
+              <a href="#about" className='group/links hover-active transition-200 overflow-hidden'>About
                 <span className=' w-[50px] block bg-black border border-black -translate-x-[110%] transition-200 link-underline group-hover/links:translate-x-0 '></span>
               </a>
               <a href="#" className='group/links hover-active transition-200 overflow-hidden'>Events
@@ -120,7 +123,7 @@ const Navbar2 = ({ containerRef }) => {
             </div>
 
             {/* Register  */}
-            <div className="text-center mt-3 mb-5">
+            <div className="text-center mt-4 mb-5">
               <button className='m-auto h-[50%] bg-red-600 w-40 p-1 hover:cursor-pointer hover-active transition-200 rounded-sm'>Register</button>
             </div>
 
@@ -130,7 +133,9 @@ const Navbar2 = ({ containerRef }) => {
 
         {/* sparkup logo  */}
         <div className='relative h-full flex-centre w-[inherit]'>
-          <img ref={logoRef} className='absolute h-2/3 w-fit ' src="/images/logo-dark.png" alt="sparkup logo" />
+          <a href="#hero" className='absolute h-2/3 w-fit '>
+            <img ref={logoRef} className='size-full ' src="/images/logo-dark.png" alt="sparkup logo" />
+          </a>
         </div>
 
         {/* silicon logo  */}
