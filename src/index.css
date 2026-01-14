@@ -12,7 +12,7 @@
 }
 
 @theme {
-  --font-cormorant: "Cormorant Garamond", 
+  --font-cormorant: "Cormorant Garamond",
     serif;
   --font-playfair: "Playfair Display",
     serif;
@@ -21,15 +21,13 @@
 }
 
 @media screen and (max-width: 1000px) {
-  h1{
-  font-weight: 700;
-  font-size: 3.5rem;
-  padding: 0;
-  margin: 0;
-}
-p{
-  font-size: 1.5rem;
-}
+  h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
 }
 
 
@@ -47,14 +45,42 @@ p{
   }
 } */
 
-@utility transition-200{
+@utility transition-200 {
   @apply transition-all duration-200;
 }
 
-@utility flex-centre{
+@utility flex-centre {
   @apply flex justify-center items-center;
 }
 
-@utility hover-active{
+@utility hover-active {
   @apply hover:font-semibold hover:tracking-widest active:font-semibold active:tracking-widest
+}
+
+@utility abs-centre {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility text-gradient-white {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: normal;
+}
+
+@utility text-gradient-red {
+  background: linear-gradient(to bottom, #ff0000, #aa0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: normal;
+}
+
+@utility bg-gradient-centre {
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 75%, rgba(0, 0, 0, 0) 100%);
+}
+
+@utility noisy {
+  @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
 }
