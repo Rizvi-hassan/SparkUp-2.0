@@ -9,6 +9,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  box-sizing: border-box;
 }
 
 @theme {
@@ -20,7 +21,7 @@
     serif;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   h1 {
     font-weight: 700;
     font-size: 3.5rem;
@@ -28,7 +29,7 @@
     margin: 0;
   }
 
-}
+} */
 
 /* Standard properties for Firefox */
 .scroll-container {
@@ -80,7 +81,7 @@
 }
 
 @utility abs-centre {
-  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply absolute top-[350px] md:top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
 @utility text-gradient-white {
@@ -106,3 +107,7 @@
 @utility noisy {
   @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
 }
+
+/* @utility shadow {
+
+} */

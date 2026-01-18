@@ -35,32 +35,6 @@ const Navbar2 = ({ containerRef }) => {
       duration: 0.1,
     })
 
-    tl.current.fromTo('#ham-2', { borderColor: 'white' }, {
-      width: '0',
-      duration: 0.1,
-    }, "<")
-
-    tl.current.fromTo('#ham-1', { borderColor: 'white' }, {
-      background: '#1e2939',
-      y: '12px',
-      duration: 0.1
-    }, "<")
-
-    tl.current.fromTo('#ham-3', { borderColor: 'white' }, {
-      background: '#1e2939',
-      y: '-12px',
-      duration: 0.1
-    }, "<")
-
-    tl.current.to("#ham-1", {
-      rotation: -45,
-      duration: 0.1
-    }, "+=0.1")
-    tl.current.to("#ham-3", {
-      rotation: 45,
-      duration: 0.1
-    }, "<")
-
     tl.current.to(navBoxRef.current, {
       width: '200px',
       height: '300px',
@@ -92,10 +66,12 @@ const Navbar2 = ({ containerRef }) => {
           {/* Navigation  */}
           <div ref={navBoxRef} id='nav-box' className='absolute top-0 left-0 rounded-md w-16 h-16 md:ml-2 md:mt-2 animate overflow-hidden z-10 font-playfair'>
             {/* Hamburger  */}
-            <div id='ham-box' onClick={toggleNavOpen} className=' h-16 w-16 p-3 transition-200 rounded-md '>
-              <div id='ham-1' className='w-10 h-1 mt-1 bg-white mb-2 rounded-md border-none transition-200 '></div>
-              <div id='ham-2' className='w-10 h-1  bg-white mb-2 rounded-md border-none transition-200 '></div>
-              <div id='ham-3' className='w-10 h-1 bg-white mb-2 rounded-md border-none transition-200 '></div>
+            <div id='ham-box' onClick={toggleNavOpen} className='h-16 w-16 transition-200 rounded-md flex-centre'>
+              <div className=' relative h-5 w-14 overflow-hidden group/nav'>
+                <div id='ham-1' className={`w-14 h-1 group-hover/nav:w-10 bg-white mb-2 rounded-md border-none transition-200 ${navOpen? 'hidden' : 'block'}`}></div>
+                <div id='ham-2' className={`w-10 h-1 bg-white mb-2 rounded-md border-none transition-200 ${navOpen ? 'hidden' : 'block'}`}></div>
+                <div className={`absolute top-0 left-0 text-white font-bold bg-black rounded-sm tracking-widest text-center cursor-pointer w-full transition-200 ${navOpen? 'translate-y-0': 'translate-y-full'}`} style={{lineHeight: '20px'}}>close</div>
+              </div>
             </div>
 
             {/* Links  */}
