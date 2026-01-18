@@ -14,8 +14,9 @@ const HeroLanding = () => {
                 trigger: '.video',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true,
+                scrub: 1,
                 pin: true,
+                // markers: true
             }
         })
 
@@ -32,52 +33,54 @@ const HeroLanding = () => {
                 trigger: '.hero',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: 1,
                 pin: true,
-                scrub: true,
+                scrub: 1,
             }
         }).to('.title', {
             letterSpacing: '1920px',
             ease: 'power1.inOut',
         })
-        .from('.subtitle', {
-            scale: 0,
-            opacity: 0,
-            ease: 'power1.inOut'
-        }, '<')
+            .from('.subtitle', {
+                scale: 0,
+                opacity: 0,
+                ease: 'power1.inOut'
+            }, '<')
 
     }, [])
     return (
-        <>
-            <div className='absolute inset-0 w-full h-dvh flex-centre '>
+        <section id='hero relative h-lvh'>
+            <div className='absolute w-full h-lvh flex-centre'>
                 <div className='size-full video'>
-                <video
-                    ref={videoRef}
-                    muted
-                    preload='auto'
-                    playsInline
-                    src="/video/output2.mp4"
-                    // {isMobile? pos}
-                    poster= {isMobile? '/images/frame-1.png': ''}
-                    className='h-lvh w-full relative object-cover bottom-0'
-                />
-                {/* Comment this line to remove noisy effect from background video  <----------------  */}
-                <div className='noisy h-lvh'></div>   
+                    <video
+                        ref={videoRef}
+                        muted
+                        preload='auto'
+                        playsInline
+                        src="/video/output2.mp4"
+                        // {isMobile? pos}
+                        poster={isMobile ? '/images/frame-1.png' : ''}
+                        className='h-full w-full relative object-cover bottom-0'
+                    />
+                    {/* Comment this line to remove noisy effect from background video  <----------------  */}
+                    <div className='absolute w-full h-[100px] bg-linear-to-t from-black to-transparent left-0 bottom-0'></div>
+                    <div className='noisy h-full'></div>
                 </div>
-                
-
             </div>
-            <section id='hero' className='relative hero pt-20 min-h-dvh'>
-                <h1 className='title text-gradient-white text-center font-playfair text-9xl font-bold abs-centre'>
+            
+            <div className='relative hero pt-20 h-lvh'>
+                <h1 className='title bg-white text-gradient-white text-center font-playfair text-7xl md:text-9xl font-bold abs-centre'>
                     SPARKUP <br />
                     <span className='text-gradient-red'>SUMMIT.</span>
                 </h1>
-                <div className='subtitle text-4xl md:text-6xl h-fit w-full text-red-600 text-center font-playfair abs-centre bottom-0 font-semibold '>
+                <div className='subtitle text-4xl md:text-6xl text-red-600 text-center text-nowrap font-playfair abs-centre font-semibold '>
                     <p className='text-gradient-white'>Sparking Innovation</p>
                     <p className='text-gradient-red'>Fueling Growth</p>
                 </div>
-            </section>
-        </>
+                <span className='absolute bottom-20 md:bottom-5 left-1/2 -translate-x-1/2 font-eb'>
+                scroll down
+                </span>
+            </div>
+        </section>
     )
 }
 
